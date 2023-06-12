@@ -1,0 +1,53 @@
+#include <stdio.h>
+
+
+struct FamilyMember {
+    char name[50];
+    int age;
+    char lastDegree[50];
+    char occupation[50];
+    float salary;
+};
+
+int main() {
+    int numMembers;
+    printf("Enter the number of family members: ");
+    scanf("%d", &numMembers);
+
+
+    struct FamilyMember members[numMembers];
+
+
+    for (int i = 0; i < numMembers; i++) {
+        printf("\nFamily Member #%d\n", i + 1);
+
+        printf("Enter name: ");
+        scanf("%s", members[i].name);
+
+        printf("Enter age: ");
+        scanf("%d", &members[i].age);
+
+        printf("Enter last degree: ");
+        scanf("%s", members[i].lastDegree);
+
+        printf("Enter occupation: ");
+        scanf("%s", members[i].occupation);
+
+        printf("Enter salary: ");
+        scanf("%f", &members[i].salary);
+    }
+
+
+    printf("\nFamily Members Information:\n");
+    for (int i = 0; i < numMembers; i++) {
+        printf("\nFamily Member #%d\n", i + 1);
+
+        printf("Name: %s\n", members[i].name);
+        printf("Age: %d\n", members[i].age);
+        printf("Last Degree: %s\n", members[i].lastDegree);
+        printf("Occupation: %s\n", members[i].occupation);
+        printf("Salary: %.2f\n", members[i].salary);
+    }
+
+    return 0;
+}
